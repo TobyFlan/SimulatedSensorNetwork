@@ -1,4 +1,3 @@
-const crypto = require("crypto");
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
@@ -10,11 +9,10 @@ module.exports = async function (context, req) {
 
 
     if(name){
-
         context.bindings.simulateData = JSON.stringify([{
 
-            //create random id
-            Id: crypto.randomUUID(),
+            //update values for sensors 1 to 20
+            Id: 1,
 
             //random number between 8 and 15
             Temperature: Math.floor(Math.random() * ((15-8) + 1) + 8),
@@ -29,7 +27,6 @@ module.exports = async function (context, req) {
             CO2: Math.floor(Math.random() * ((1500-500) + 1) + 500)
 
         }]);
-
     }
 
 
