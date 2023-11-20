@@ -6,6 +6,13 @@
       "direction": "in",
       "tableName": "dbo.SensorData",
       "connectionStringSetting": "SqlConnectionString"
+    },
+    {
+      "type": "sql",
+      "direction": "out",
+      "name": "processData",
+      "commandText": "dbo.SensorMetaData",
+      "connectionStringSetting": "SqlConnectionString"
     }
   ],
   "disabled": false
