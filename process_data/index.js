@@ -1,28 +1,15 @@
-module.exports = async function (context, sqlChanges) {
-    context.log('JavaScript SQL trigger function processed a request.');
 
-    var totalTemp = 0, totalWind = 0, totalCO2 = 0, totalHumid = 0;
+module.exports = async function (context, sqlChanges, sqlData, processData) {
 
-    for (let i = 0; i < sqlChanges.length; i++) {
-        const change = sqlChanges[i];
+    //array for total sensor values with 20 values
 
-        // Log information about the current change
-        console.log(`Change ${i + 1}: ${JSON.stringify(change)}`);
 
-        // Access individual components of the change
-        const temperature = change.Item.Temperature; 
-        const wind = change.Item.Wind; 
-        const co2 = change.Item.CO2; 
-        const humid = change.Item.RHumidity;
+    console.log(JSON.stringify(sqlData));
 
-        totalTemp += temperature;
-        totalWind += wind;
-        totalCO2 += co2;
-        totalHumid += humid;       
 
-    }
 
-    //print total values:
-    console.log(`totalTemp = ${totalTemp}, totalWind = ${totalWind}, totalCO2 = ${totalCO2}, totalHumid = ${totalHumid}! `);
+
+    //so this function finds the averatges of the newly added 100 table entries. Need to find average with old ones.
+
 
 };

@@ -1,3 +1,4 @@
+
 module.exports = async function (context, myTimer) {
     
 
@@ -10,7 +11,7 @@ module.exports = async function (context, myTimer) {
         sensorDataArray.push({
 
             //update values for sensors 1 to 20
-            Id: i,
+            SensorID: i,
 
             //random number between 8 and 15
             Temperature: Math.floor(Math.random() * ((15-8) + 1) + 8),
@@ -24,9 +25,13 @@ module.exports = async function (context, myTimer) {
             //random number between 500 and 1500
             CO2: Math.floor(Math.random() * ((1500-500) + 1) + 500)
 
+
         });   
 
     }
+
+    console.log(`just added ${sensorDataArray.length} entries`);
+    
 
     context.bindings.simulateData = JSON.stringify(sensorDataArray);
     

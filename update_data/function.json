@@ -12,6 +12,13 @@
       "name": "simulateData",
       "commandText": "dbo.SensorData",
       "connectionStringSetting": "SqlConnectionString"
+    },
+    {
+      "type": "sql",
+      "direction": "out",
+      "name": "deleteOldData",
+      "commandText": "dbo.DeleteOldSensorData",
+      "connectionStringSetting": "SqlConnectionString"
     }
   ]
 }

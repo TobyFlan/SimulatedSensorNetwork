@@ -8,6 +8,13 @@
       "connectionStringSetting": "SqlConnectionString"
     },
     {
+      "name": "sqlData",
+      "type": "sql",
+      "direction": "in",
+      "commandText": "SELECT SensorID, MAX(Temperature) AS MaxTemperature, MIN(Temperature) AS MinTemperature, AVG(Temperature) AS AvgTemperature, MAX(Wind) AS MaxWind, MIN(Wind) AS MinWind, AVG(Wind) AS AvgWind, MAX(RHumidity) AS MaxHumidity, MIN(RHumidity) AS MinHumidity, AVG(RHumidity) AS AvgHumidity, MAX(CO2) AS MaxCO2, MIN(CO2) AS MinCO2, AVG(CO2) AS AvgCO2 FROM dbo.SensorData WHERE SensorID BETWEEN 1 AND 20 GROUP BY SensorID ORDER BY SensorID DESC;",
+      "connectionStringSetting": "SqlConnectionString"
+    },
+    {
       "type": "sql",
       "direction": "out",
       "name": "processData",
